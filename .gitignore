@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+runtime/
+certs/
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite*
+*.log
+output/

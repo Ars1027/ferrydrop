@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew FerryDrop public IP TLS certificate
+After=docker.service network-online.target
+Requires=docker.service
+[Service]
+Type=oneshot
+ExecStart=/opt/ferrydrop/renew-ip-cert.sh

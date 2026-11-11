@@ -1,0 +1,16 @@
+services:
+  ferrydrop:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports: ["8443:8443"]
+    read_only: true
+    user: "1000:1000"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: ["/tmp:size=32m,noexec,nosuid"]
+    volumes:
+      - ../runtime/container-data:/data
+      - ../certs/server.pem:/certs/server.pem:ro
+      - ../certs/server-key.pem:/certs/server-key.pem:ro
+    restart: unless-stopped

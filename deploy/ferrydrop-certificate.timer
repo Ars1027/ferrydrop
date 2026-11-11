@@ -1,0 +1,8 @@
+[Unit]
+Description=Check FerryDrop certificate twice a day
+[Timer]
+OnCalendar=*-*-* 00,12:00:00
+RandomizedDelaySec=600
+Persistent=true
+[Install]
+WantedBy=timers.target

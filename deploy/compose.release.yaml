@@ -1,0 +1,22 @@
+services:
+  ferrydrop:
+    image: ferrydrop:release
+    container_name: ferrydrop
+    init: true
+    restart: unless-stopped
+    ports: ["8443:8443"]
+    read_only: true
+    user: "1000:1000"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 256m
+    pids_limit: 128
+    tmpfs: ["/tmp:size=16m,noexec,nosuid"]
+    volumes:
+      - /opt/ferrydrop/data:/data
+      - /opt/ferrydrop/certs:/certs:ro
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"

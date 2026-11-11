@@ -1,0 +1,24 @@
+{
+  "name": "@ferrydrop/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/main.ts",
+    "dev": "tsx watch src/main.ts",
+    "user": "tsx src/user.ts"
+  },
+  "dependencies": {
+    "fastify": "^5.6.0",
+    "@fastify/websocket": "^11.2.0",
+    "@fastify/static": "^10.1.10",
+    "@fastify/rate-limit": "^10.3.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "tsx": "^4.20.0"
+  }
+}

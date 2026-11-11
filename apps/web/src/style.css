@@ -1,0 +1,638 @@
+:root {
+  font-family: Inter, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #203833;
+  background: #f6f3eb;
+  font-synthesis: none;
+  font-size: 14px;
+}
+.save-notice {
+  padding: 12px 0;
+  color: #24695c;
+  border-bottom: 1px solid #d8dbcf;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+.filebutton {
+  cursor: pointer;
+  border: 1px solid #c8cfc2;
+  background: transparent;
+  color: #203833;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+button:hover,
+.filebutton:hover {
+  background: #e7ebe1;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.drop:focus-within {
+  outline: 3px solid #d49e54;
+  outline-offset: 3px;
+}
+input,
+select {
+  background: #fffdf7;
+  border: 1px solid #c8cfc2;
+  border-radius: 5px;
+  padding: 11px;
+  color: inherit;
+  max-width: 100%;
+}
+.primary {
+  background: #24695c;
+  color: white;
+  border-color: #24695c;
+}
+.primary:hover {
+  background: #195245;
+}
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  max-width: 1600px;
+  margin: auto;
+  min-height: 100vh;
+}
+aside {
+  padding: 48px 28px;
+  border-right: 1px solid #d8dbcf;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.brand {
+  font-size: 29px;
+  font-weight: 750;
+  letter-spacing: -1.4px;
+  color: inherit;
+  text-decoration: none;
+}
+.brand span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-top: 12px;
+}
+nav {
+  display: grid;
+  gap: 8px;
+  margin-top: 62px;
+}
+nav button {
+  text-align: left;
+  border: 0;
+  padding: 15px;
+}
+.selected {
+  background: #e2e8dc;
+}
+.identity {
+  margin-top: auto;
+  font-size: 12px;
+}
+.identity strong,
+.identity small {
+  display: block;
+  margin-top: 12px;
+}
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: #aa6a45;
+  margin-right: 8px;
+}
+.online {
+  background: #31775a;
+}
+main {
+  padding: 28px 56px;
+  min-width: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8dbcf;
+  padding-bottom: 24px;
+  font-size: 12px;
+}
+.edition,
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 42px 0 36px;
+}
+.heading p:last-child {
+  line-height: 1.9;
+  color: #64736b;
+}
+.eyebrow {
+  margin-bottom: 18px;
+  color: #597267;
+}
+h1 {
+  font-size: 48px;
+  letter-spacing: -2px;
+  font-weight: 550;
+  line-height: 1.2;
+  margin: 0;
+}
+h2 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #718177;
+  margin: 0 0 25px;
+}
+h2 span {
+  font-size: 17px;
+  color: #203833;
+  margin-left: 13px;
+}
+section {
+  padding: 28px 0;
+  border-bottom: 1px solid #d8dbcf;
+}
+.roomgrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 34px;
+  border-top: 1px solid #aebbad;
+}
+.recipients {
+  border-left: 1px solid #d8dbcf;
+  padding-left: 30px;
+}
+.actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.actions input {
+  min-width: 0;
+  width: 165px;
+}
+.invitation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+.invitation strong {
+  display: block;
+  font-family: Consolas, monospace;
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin: 12px 0;
+}
+.invitation p,
+.empty {
+  font-size: 12px;
+  color: #64736b;
+  line-height: 1.9;
+}
+.invitation img {
+  width: 105px;
+  height: 105px;
+}
+small {
+  font-size: 12px;
+  color: #64736b;
+}
+.device {
+  padding: 15px 0;
+  border-bottom: 1px solid #dde0d6;
+}
+.device label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.device small,
+.row small {
+  display: block;
+  margin-top: 5px;
+}
+.device button {
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-top: 9px;
+}
+.quiet {
+  border: 0;
+  font-size: 12px;
+  padding: 8px 0;
+  text-decoration: underline;
+}
+.drop {
+  position: relative;
+  border: 1px dashed #a9b9a7;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  background: #eeefe5;
+}
+.drop > span:last-of-type {
+  font-size: 12px;
+  color: #64736b;
+}
+.drop input,
+.filebutton input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.plus {
+  font-size: 28px;
+}
+.row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #dde0d6;
+  overflow-wrap: anywhere;
+}
+.row > span:first-child {
+  flex: 1;
+}
+.row button {
+  flex-shrink: 0;
+}
+.sectionhead {
+  display: flex;
+  justify-content: space-between;
+}
+.sectionhead h2 {
+  font-size: 21px;
+  color: #203833;
+}
+.sectionhead h2 small {
+  margin-left: 14px;
+}
+.task {
+  padding: 23px 0;
+  border-top: 1px solid #d8dbcf;
+}
+.tasktitle,
+.taskmeta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.tasktitle strong {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.tasktitle > span:last-child,
+.direction {
+  font-size: 12px;
+  color: #64736b;
+}
+.direction {
+  white-space: nowrap;
+}
+.taskmeta {
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64736b;
+  margin-top: 16px;
+}
+progress {
+  appearance: none;
+  height: 3px;
+  width: 100%;
+  margin: 12px 0 18px;
+}
+progress::-webkit-progress-bar {
+  background: #dce1d6;
+}
+progress::-webkit-progress-value {
+  background: #24695c;
+}
+.task .actions button,
+.filebutton {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+.filebutton {
+  position: relative;
+}
+.error {
+  background: #f5dfd5;
+  border-left: 3px solid #b74532;
+  padding: 15px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  overflow-wrap: anywhere;
+}
+.error button {
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+.welcome {
+  padding: 65px 0;
+  max-width: 640px;
+}
+.welcome > p:not(.eyebrow) {
+  line-height: 1.9;
+  color: #64736b;
+}
+.welcome form {
+  max-width: 360px;
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+}
+.welcome label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0;
+  font-size: 12px;
+  color: #718177;
+}
+.mobile {
+  display: none;
+}
+select {
+  margin-top: 16px;
+}
+@media (max-width: 1100px) {
+  main {
+    padding: 24px 30px;
+  }
+  .shell {
+    grid-template-columns: 195px 1fr;
+  }
+  aside {
+    padding: 36px 20px;
+  }
+  .roomgrid {
+    grid-template-columns: 1fr;
+  }
+  .recipients {
+    border-left: 0;
+    border-top: 1px solid #d8dbcf;
+    padding: 24px 0 0;
+  }
+}
+@media (max-width: 650px) {
+  .shell {
+    display: block;
+  }
+  aside {
+    position: static;
+    height: auto;
+    padding: 20px;
+    border-right: 0;
+    border-bottom: 1px solid #d8dbcf;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .brand span {
+    display: none;
+  }
+  nav {
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  nav button {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .identity {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .identity strong,
+  .identity small {
+    margin: 0;
+  }
+  main {
+    padding: 22px 20px;
+  }
+  .heading {
+    padding: 32px 0 25px;
+    align-items: start;
+  }
+  .heading > p {
+    display: none;
+  }
+  h1 {
+    font-size: 39px;
+  }
+  .invitation strong {
+    font-size: 29px;
+  }
+  .actions input {
+    flex: 1;
+    width: 120px;
+  }
+  .sectionhead {
+    gap: 10px;
+  }
+  .sectionhead > small {
+    max-width: 110px;
+  }
+  .tasktitle {
+    flex-wrap: wrap;
+  }
+  .tasktitle strong {
+    min-width: 65%;
+  }
+  .tasktitle > span:last-child {
+    margin-left: 45px;
+  }
+  .welcome {
+    padding: 35px 0;
+  }
+  footer span {
+    max-width: 170px;
+    text-align: right;
+  }
+  .row {
+    gap: 8px;
+  }
+  .row button {
+    padding: 7px;
+  }
+  .edition {
+    display: none;
+  }
+}
+.room-state {
+  font-size: 12px;
+  color: #24695c;
+  margin-top: 18px;
+  font-weight: 600;
+}
+.room-toggle {
+  display: block;
+  margin-top: -10px;
+}
+.room-entry {
+  margin-top: 10px;
+}
+.join-notice {
+  font-size: 12px;
+  color: #24695c;
+  line-height: 1.6;
+}
+.chosen {
+  background: #e8ecdf;
+  border-radius: 4px;
+  padding: 15px 10px;
+}
+.chosen-label {
+  display: block;
+  color: #24695c;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.sectionhead > small,
+.tasktitle > span:last-child {
+  white-space: nowrap;
+}
+.tasktitle > span:last-child {
+  font-variant-numeric: tabular-nums;
+}
+footer span {
+  white-space: nowrap;
+}
+@media (max-width: 650px) {
+  .heading {
+    padding: 22px 0 18px;
+  }
+  .heading h1 {
+    font-size: 31px;
+  }
+  .heading .eyebrow {
+    margin-bottom: 12px;
+  }
+  .roomgrid {
+    gap: 20px;
+    padding: 22px 0;
+  }
+  .roomgrid h2 {
+    margin-bottom: 17px;
+  }
+  .invitation {
+    margin-top: 12px;
+  }
+  .invitation strong {
+    font-size: 27px;
+    margin: 9px 0;
+    letter-spacing: 2px;
+  }
+  .invitation img {
+    width: 86px;
+    height: 86px;
+  }
+  .invitation p {
+    margin-bottom: 0;
+  }
+  .room-state {
+    margin-top: 10px;
+  }
+  .recipients {
+    padding-top: 20px;
+  }
+  .device {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .sectionhead {
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .sectionhead > small {
+    max-width: none;
+    margin-bottom: 14px;
+  }
+  .sectionhead h2 {
+    margin-bottom: 14px;
+  }
+  .tasktitle > span:last-child {
+    margin-left: 0;
+  }
+  footer {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  footer span {
+    max-width: none;
+    text-align: left;
+    font-size: 12px;
+  }
+}
+.revoke-form {
+  padding: 22px;
+  background: #eeefe5;
+  display: grid;
+  gap: 16px;
+  max-width: 440px;
+  margin: 24px 0;
+}
+.revoke-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.receipt-detail {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #64736b;
+}

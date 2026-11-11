@@ -1,0 +1,13 @@
+FROM node:24-bookworm-slim
+WORKDIR /app
+COPY package*.json ./
+COPY apps/server/package.json apps/server/package.json
+COPY apps/web/package.json apps/web/package.json
+COPY packages/protocol/package.json packages/protocol/package.json
+RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+COPY apps/server/dist apps/server/dist
+COPY apps/web/dist apps/web/dist
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=8443 DATA_DIR=/data TLS_CERT=/certs/server.pem TLS_KEY=/certs/server-key.pem NODE_OPTIONS=--max-old-space-size=160
+USER node
+EXPOSE 8443
+CMD ["node","apps/server/dist/main.js"]

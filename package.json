@@ -1,0 +1,21 @@
+{
+  "name": "ferrydrop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "npm run dev -w @ferrydrop/server",
+    "build": "npm run build -w @ferrydrop/web && npm run build -w @ferrydrop/server",
+    "start": "npm run start -w @ferrydrop/server",
+    "user": "npm run user -w @ferrydrop/server --",
+    "cert": "node scripts/cert.mjs",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit -p apps/server && tsc --noEmit -p apps/web",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0", "@types/node": "^24.0.0", "@types/ws": "^8.18.0", "tsx": "^4.20.0", "typescript": "^5.9.0"
+  }
+}

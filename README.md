@@ -95,6 +95,4 @@ npm run test:e2e
 
 安卓和 Windows 均使用同一个“保存到设备”按钮，通过浏览器下载文件。保存目录和是否询问位置由浏览器设置决定，接收副本保留到用户主动删除。
 
-Windows 启动与 ACL 脚本、Linux 容器配置位于 `scripts/` 和 `deploy/`。课程提交脚本 `scripts/package.ps1` 接收姓名、学号、真实报告及录屏，按要求生成 ZIP。运行数据、证书私钥和账户口令不会进入源码包。
-
 MIT License。
